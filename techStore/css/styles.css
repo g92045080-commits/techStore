@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #f2f2f2;
+}
+.header{
+    width: 100%;
+    background-color: #5a5a5a;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+}
+.header .nav ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+.header .nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+.header .nav ul li a:hover{
+    color: #d6d6d6;
+}
+.banner{
+    width: 100%;
+    height: 500px;
+    background-image: url('../img/baner.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+    z-index: 1;
+
+}
+.banner h1 {
+    color: #fff;
+    font-size: 45px;
+    font-weight: 800;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+.banner p {
+    color: #fff;
+    font-size: 18px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    position: relative;
+    text-align: center;
+    max-width: 600px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+.btn-banner {
+    background-color: #5a5a5a;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn-banner:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+.btn-banner:active {
+    transform: translateY(-1px);
+}
+
+.produtos-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.produtos-section h3 {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.produtos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.produto {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 280px;
+    cursor: pointer;
+}
+
+.produto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.produto-imagem {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.produto-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.produto:hover .produto-imagem img {
+    transform: scale(1.05);
+}
+
+.produto-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.produto-nome {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.produto-preco {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn-comprar {
+    background-color: #5a5a5a;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn-comprar:hover {
+    background-color: #404040;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .produtos-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    
+    .produtos-section h3 {
+        font-size: 24px;
+    }
+}
